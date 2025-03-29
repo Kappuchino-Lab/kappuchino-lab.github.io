@@ -1,0 +1,1 @@
+import{e as o,f as s,g as a,c as n,o as r,t as c,h as l}from"./CDeVaodF.js";const _=o({__name:"[id]",setup(p){const t=s(),{id:e}=t.params;return a({title:`Blog post ${e}`}),(i,u)=>(r(),n("div",null," Welcome to the detail blog post "+c(l(e)),1))}});export{_ as default};
