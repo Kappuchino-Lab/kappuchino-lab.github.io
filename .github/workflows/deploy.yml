@@ -1,0 +1,27 @@
+name: Deploy Pre-built Nuxt to GitHub Pages
+
+on:
+  push:
+    branches: [main] # Assumes your pre-built files are pushed to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Prepare for deployment 📝
+        run: |
+          # Create .nojekyll file to prevent Jekyll processing (if not already there)
+          [ -f .nojekyll ] || touch .nojekyll
+          
+          # Ensure 404.html exists for client-side routing (if not already there)
+          [ -f 404.html ] || cp index.html 404.html
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # The branch the action should deploy to
+          folder: . # Deploy the current directory (which contains pre-built files)
+          clean: true # Automatically remove deleted files from the deploy branch
