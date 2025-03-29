@@ -1,0 +1,1 @@
+import{_ as e}from"./DlAUqK2U.js";import{c as n,o}from"./CDeVaodF.js";const r={};function t(c,s){return o(),n("div",null," Opps, something went wrong! ")}const f=e(r,[["render",t]]);export{f as default};
